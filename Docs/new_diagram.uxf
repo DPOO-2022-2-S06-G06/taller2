@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>4</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>92</y>
+      <w>144</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>Aplicacion
+--
+--
++ main(String[]): void
++ input(String): String
++ ejecutarAplicacion(): void
++ mostrarMenu(): void
+- ejecutarCargarInformacion(): void
+- ejecutarMostrarMenu(): void
+- ejecutarMostrarCombos(): void
+- ejecutarMostrarIngredientes(): void
+- ejecutarInicarPedido(): void
+- ejecutaragregarProducto(): void
+- ejecutarcerrarYGuardar(): void
+- ejecutarConsultarPedido(): void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>292</x>
+      <y>96</y>
+      <w>224</w>
+      <h>92</h>
+    </coordinates>
+    <panel_attributes>Restaurante
+--
+--
+_+ IniciarPedido(String nombreCliente, String direccionCliente): void_
+_+ getPedidoEnCurso(): Pedido_
+_+ getMenuBase(): List&lt;ProductoMenu&gt;_
+_+ getIngredientes(): List&lt;Ingrediente&gt;_
+_+ getCombos(): List&lt;Combo&gt;_
+_+ cargarInformacionRestaurante(String archivo1, String archivo2, String archivo3): void_
+_+ cerrarYGuardarPedido(): void_
+_+ ConsultarPedido(int idPedido): String_
+_- cargarIngredientes(String nombreArchivo): List&lt;Ingrediente&gt;_
+_- cargarMenu(String nombreArchivo): List&lt;ProductoMenu&gt;_
+_- cargarCombos(String nombreArchivo): List&lt;Combo&gt;_
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>140</x>
+      <y>136</y>
+      <w>160</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>380.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>580</x>
+      <y>244</y>
+      <w>88</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes>Ingrediente
+--
+- nombre: String
+- CostoAdicional: int
+--
+getNombre(): String
+getCostoAdicional(): int
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>512</x>
+      <y>140</y>
+      <w>144</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+*
+_ingredientes_</panel_attributes>
+    <additional_attributes>270.0;260.0;270.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>136</x>
+      <y>316</y>
+      <w>168</w>
+      <h>128</h>
+    </coordinates>
+    <panel_attributes>Pedido
+--
+_- numeroPedidos: int_
+- idPedido: int
+- NombreCliente: String
+- DireccionCliente: String
+- itemsPedido: List&lt;Producto&gt;
+--
++ Pedido(String pnombreCliente, String pdireccionCliente)
++ getIdPedido(): int
++ agregarProducto(Producto nuevoItem): void
+- getPrecioNetoPedido(): int
+- getCaloriasTotal(): int
+- getPrecioIvaPedido(): int
+- getPrecioTotalPedido(): int
++ generarTextoFactura(): String
++ guardarFactura(): void
++ getItemsPedido(): List&lt;Producto&gt;
++ hashCode(): int
++ equals(Object obj): boolean</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>216</x>
+      <y>160</y>
+      <w>84</w>
+      <h>164</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+*
+_pedidos_</panel_attributes>
+    <additional_attributes>10.0;390.0;10.0;10.0;190.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>248</x>
+      <y>176</y>
+      <w>52</w>
+      <h>148</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+0..1
+_pedidoEnCurso_</panel_attributes>
+    <additional_attributes>10.0;350.0;10.0;10.0;110.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>424</x>
+      <y>288</y>
+      <w>40</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>SimpleClass</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
